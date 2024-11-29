@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/21"
+            fx:controller="org.example.football.MainController"
+            stylesheets="@styles.css">
+    <children>
+        <!-- Header Section -->
+        <HBox layoutX="20.0"
+              layoutY="20.0"
+              spacing="10.0"
+              alignment="CENTER_LEFT">
+
+
+            <!-- Title Label -->
+            <Label fx:id="titleLabel"
+                   text="Football Matches Viewer"
+                   styleClass="title-label" />
+
+            <!-- Fetch Button -->
+            <Button fx:id="fetchButton"
+                    text="Fetch Matches"
+                    onAction="#fetchMatches"
+                    styleClass="button-fetch" />
+        </HBox>
+
+        <!-- Status Label -->
+        <Label fx:id="statusLabel"
+               layoutX="20.0"
+               layoutY="80.0"
+               text=""
+               styleClass="status-label" />
+
+        <!-- TableView -->
+        <TableView fx:id="matchesTable"
+                   layoutX="20.0"
+                   layoutY="100.0"
+                   prefWidth="760.0"
+                   prefHeight="400.0"
+                   styleClass="table-view">
+            <columns>
+                <TableColumn text="Home Team" fx:id="homeTeamColumn" prefWidth="250.0" />
+                <TableColumn text="Away Team" fx:id="awayTeamColumn" prefWidth="250.0" />
+                <TableColumn text="Match Date" fx:id="dateColumn" prefWidth="250.0" />
+            </columns>
+        </TableView>
+
+        <!-- Action Buttons -->
+        <HBox layoutX="20.0"
+              layoutY="520.0"
+              spacing="20.0">
+            <Button text="Clear Table"
+                    onAction="#clearFields"
+                    styleClass="button-clear" />
+            <Button text="Exit"
+                    onAction="#exitApplication"
+                    styleClass="button-exit" />
+        </HBox>
+    </children>
+</AnchorPane>
